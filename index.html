@@ -325,12 +325,23 @@
 											</div>
 											<!-- Social Media Ends -->
 											<!-- Button Wrapper Starts -->
+											<script type="text/javascript">
+												
+												function resume()
+												{
+													a=prompt("Please enter the PassCode to Download Resume");
+													if(a==="GORARESUME")
+													{
+														alert("PassCode is correct ! Wait till the resume is downloaded");
+													}
+												}
+											</script>
 											<div class="button-wrapper col-12">
 												<!-- Single Button Starts -->
 												<div class="single-button">
 													<a href="#">
 														<span class="front">
-															<i class="fas fa-file-pdf"></i><span class="value">Download <span>CV</span></span>
+															<i class="fas fa-file-pdf" onclick="resume()"></i><span class="value">Download <span>CV</span></span>
 														</span>
 														<span class="back">
 															<i class="fas fa-file-pdf"></i><span class="value">Download <span>CV</span></span>
