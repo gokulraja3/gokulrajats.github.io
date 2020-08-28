@@ -29,6 +29,20 @@
     gtag('js', new Date());
   
     gtag('config', 'UA-136792114-1');
+	  function getApi = () => {
+		    fetch('https://randomuser.me/api/?results=10')
+  .then((resp) => {
+			    console.log(resp)
+			    resp.json()
+		    }) 
+  .catch(function(error) {
+    // If there is any error you will catch them here
+			    console.log(error);
+  }); 
+	  }
+	  
+
+	  
   </script>
 	<script data-ad-client="ca-pub-5471095688483814" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 </head>
@@ -226,7 +240,7 @@
             <i class="fab fa-aws"></i>
           </li>
           <li class="list-inline-item">
-            <i class="fab fa-python"></i>
+            <i class="fab fa-python" onclick="getApi()"></i>
           </li>
         </ul>
 
