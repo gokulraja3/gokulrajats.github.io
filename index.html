@@ -1,318 +1,172 @@
-  <!DOCTYPE html>
-<html lang="en">
-
+<!DOCTYPE html>
 <head>
-
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
-
   <title>Gokul Raja</title>
-
-  <!-- Bootstrap core CSS -->
-  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link rel="icon" type="image/jpg" href="img/profile.jpg">
-
-
-  <!-- Custom fonts for this template -->
-  <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet">
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
 
-  <!-- Custom styles for this template -->
-  <link href="css/resume.min.css" rel="stylesheet">
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-136792114-1"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-  
-    gtag('config', 'UA-136792114-1');
-	  function getApi(){
-		    fetch('https://randomuser.me/api/?results=10')
-  .then((resp) => {
-			    console.log(resp)
-			    resp.json()
-		    }) 
-  .catch(function(error) {
-    // If there is any error you will catch them here
-			    console.log(error);
-  }); 
-	  }
-	  
-
-	  
-  </script>
-	<script data-ad-client="ca-pub-5471095688483814" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 </head>
+<style>
+  @import 'https://fonts.googleapis.com/css?family=Open+Sans:300,400';
+.firstinfo, .badgescard, body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-<body id="page-top">
+html {
+  height: 100%;
+}
 
-  <script>
-	window.fwSettings={
-	'widget_id':81000000704
-	};
-	!function(){if("function"!=typeof window.FreshworksWidget){var n=function(){n.q.push(arguments)};n.q=[],window.FreshworksWidget=n}}() 
-</script>
-<script type='text/javascript' src='https://ind-widget.freshworks.com/widgets/81000000704.js' async defer></script>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
-    <a class="navbar-brand js-scroll-trigger" href="#page-top">
-      <span class="d-block d-lg-none">Gokul Raja</span>
-      <span class="d-none d-lg-block">
-        <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="img/profile.jpg" alt="">
-      </span>
-    </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#about">About</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#experience">Experience</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#education">Education</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#skills">Skills</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#interests">Interests</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#awards">Awards</a>
-        </li>
-      </ul>
+body {
+  font-family: "Open Sans", sans-serif;
+  width: 100%;
+  min-height: 100%;
+  background: #a489e2;
+  font-size: 16px;
+  overflow: hidden;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+.content {
+  position: relative;
+  animation: animatop 0.9s cubic-bezier(0.425, 1.14, 0.47, 1.125) forwards;
+}
+
+.card {
+  width: 500px;
+  min-height: 100px;
+  padding: 20px;
+  border-radius: 3px;
+  background-color: white;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+.card:after {
+  content: "";
+  display: block;
+  width: 190px;
+  height: 300px;
+  background: #e2e2e3;
+  position: absolute;
+  animation: rotatemagic 0.75s cubic-bezier(0.425, 1.04, 0.47, 1.105) 1s both;
+}
+
+.badgescard {
+  padding: 10px 20px;
+  border-radius: 3px;
+  background-color: #ECECEC;
+  width: 480px;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+  position: absolute;
+  z-index: -1;
+  left: 10px;
+  bottom: 10px;
+  animation: animainfos 0.5s cubic-bezier(0.425, 1.04, 0.47, 1.105) 0.75s forwards;
+}
+.badgescard span {
+  font-size: 1.6em;
+  margin: 0px 6px;
+  opacity: 0.6;
+}
+
+.firstinfo {
+  flex-direction: row;
+  z-index: 2;
+  position: relative;
+}
+.firstinfo img {
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+}
+.firstinfo .profileinfo {
+  padding: 0px 20px;
+}
+.firstinfo .profileinfo h1 {
+  font-size: 1.8em;
+}
+.firstinfo .profileinfo h3 {
+  font-size: 1.2em;
+  color: #a489e2;
+}
+.firstinfo .profileinfo p.bio {
+  padding: 10px 0px;
+  color: #5A5A5A;
+  line-height: 1.2;
+  font-style: initial;
+}
+
+@keyframes animatop {
+  0% {
+    opacity: 0;
+    bottom: -500px;
+  }
+  100% {
+    opacity: 1;
+    bottom: 0px;
+  }
+}
+@keyframes animainfos {
+  0% {
+    bottom: 10px;
+  }
+  100% {
+    bottom: -42px;
+  }
+}
+@keyframes rotatemagic {
+  0% {
+    opacity: 0;
+    transform: rotate(0deg);
+    top: -24px;
+    left: -253px;
+  }
+  100% {
+    transform: rotate(-30deg);
+    top: -24px;
+    left: -78px;
+  }
+}
+</style>
+<body>
+
+<div class="content">
+  <div class="card">
+    <div class="firstinfo"><img src="img/profile.jpg"/>
+      <div class="profileinfo">
+        <h1>Gokul Raja T S</h1>
+        <h3>Android / Fullstack Engineer</h3>
+        <p class="bio">Code | Coffee | Music | Basketball</p>
+      </div>
     </div>
-  </nav>
-
-  <div class="container-fluid p-0">
-
-    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="about">
-      <div class="w-100">
-        <h1 class="mb-0">Gokul
-          <span class="text-primary">Raja</span>
-        </h1>
-        <div class="subheading mb-5">Coimbatore · TamilNadu, 626138 ·
-          <a href="mailto:name@email.com">talktogokulraja@gmail.com</a>
-        </div>
-        <p class="lead mb-5">I am experienced in developing softwares that leverages clients productivity and optimizes regular activities.Worked in various Technologies in frontend and backend technologies,application deployment and microservices.</p>
-        <div class="social-icons">
-          <a href="https://in.linkedin.com/in/gokul-raja-t-s-115863134" target="_blank">
-            <i class="fab fa-linkedin-in"></i>
-          </a>
-          <a href="https://github.com/gokulrajats/" target="_blank">
-            <i class="fab fa-github"></i>
-          </a>
-          <a href="https://www.instagram.com/gokulraja3/" target="_blank">
-            <i class="fab fa-instagram"></i>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <hr class="m-0">
-
-    <section class="resume-section p-3 p-lg-5 d-flex justify-content-center" id="experience">
-      <div class="w-100">
-        <h2 class="mb-5">Experience</h2>
-
-        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
-          <div class="resume-content">
-            <h3 class="mb-0">Product Engineer Trainee</h3>
-            <div class="subheading mb-3">Codingmart Technologies</div>
-            <p>Got into the Full Stack Dev Mode,got hands into Front and Back ends of Web Development. Rided on some Rails ROR as well !..</p>
-          </div>
-          <div class="resume-date text-md-right">
-            <span class="text-primary">December 2019 - Present</span>
-          </div>
-        </div>
-
-        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
-          <div class="resume-content">
-            <h3 class="mb-0">Student Developer Internship</h3>
-            <div class="subheading mb-3">Aagnia Technologies</div>
-            <p>Converting the Sports Software easy by integrating with Chatbots that serves the users queries.</p>
-          </div>
-          <div class="resume-date text-md-right">
-            <span class="text-primary">May 2018 -June 2018</span>
-          </div>
-        </div>
-
-        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
-          <div class="resume-content">
-            <h3 class="mb-0">Student Internet Of Things Internship</h3>
-            <div class="subheading mb-3">Expertshub Skill Training Centre</div>
-            <p>Teamed Up and built a Home Automation System based on IoT and played a Software Developer Role for the Team.</p>
-          </div>
-          <div class="resume-date text-md-right">
-            <span class="text-primary">January 2018 - February 2018</span>
-          </div>
-        </div>
-
-        <div class="resume-item d-flex flex-column flex-md-row justify-content-between">
-          <div class="resume-content">
-            <h3 class="mb-0">Web Design Intern</h3>
-            <div class="subheading mb-3">Domazon Website Company</div>
-            <p>Worked in a Collaborative Environment with Clients and built them Great Designs.</p>
-          </div>
-          <div class="resume-date text-md-right">
-            <span class="text-primary">April 2017 - June 2017</span>
-          </div>
-        </div>
-
-      </div>
-
-    </section>
-
-    <hr class="m-0">
-
-    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="education">
-      <div class="w-100">
-        <h2 class="mb-5">Education</h2>
-
-        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
-          <div class="resume-content">
-            <h3 class="mb-0">Hindusthan College of Engineering and Technology</h3>
-            <div class="subheading mb-3">Bachelor of Engineering</div>
-            <div>Computer Science Engineering</div>
-            <p>CGPA: 8.2 </p>
-          </div>
-          <div class="resume-date text-md-right">
-            <span class="text-primary">June 2016 - May 2020</span>
-          </div>
-        </div>
-
-        <div class="resume-item d-flex flex-column flex-md-row justify-content-between">
-          <div class="resume-content">
-            <h3 class="mb-0">Sivakasi Lions School</h3>
-            <div class="subheading mb-3">High School</div>
-            <p>CGPA: 9.0</p>
-          </div>
-          <div class="resume-date text-md-right">
-            <span class="text-primary">June 2014 - May 2016</span>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <hr class="m-0">
-
-    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="skills">
-      <div class="w-100">
-        <h2 class="mb-5">Skills</h2>
-
-        <div class="subheading mb-3">Programming Languages &amp; Tools</div>
-        <ul class="list-inline dev-icons">
-          <li class="list-inline-item">
-            <i class="fab fa-html5"></i>
-          </li>
-          <li class="list-inline-item">
-            <i class="fab fa-css3-alt"></i>
-          </li>
-          <li class="list-inline-item">
-            <i class="fab fa-js-square"></i>
-          </li>
-          <li class="list-inline-item">
-            <i class="fab fa-angular"></i>
-          </li>
-          <li class="list-inline-item">
-            <i class="fab fa-react"></i>
-          </li>
-          <li class="list-inline-item">
-            <i class="fab fa-node-js"></i>
-          </li>
-          <li class="list-inline-item">
-            <i class="fab fa-sass"></i>
-          </li>
-          <li class="list-inline-item">
-            <i class="fab fa-npm"></i>
-          </li>
-          <li class="list-inline-item">
-            <i class="far fa-gem"></i>
-          </li>
-          <li class="list-inline-item">
-            <i class="fab fa-aws"></i>
-          </li>
-          <li class="list-inline-item">
-            <i class="fab fa-python" onclick="getApi()"></i>
-          </li>
-        </ul>
-
-        <div class="subheading mb-3">Workflow</div>
-        <ul class="fa-ul mb-0">
-          <li>
-            <i class="fa-li fa fa-check"></i>
-            Mobile-First, Responsive Design</li>
-          <li>
-            <i class="fa-li fa fa-check"></i>
-            Cross Browser Testing &amp; Debugging</li>
-          <li>
-            <i class="fa-li fa fa-check"></i>
-            Cross Functional Teams</li>
-          <li>
-            <i class="fa-li fa fa-check"></i>
-            Agile Development &amp; Scrum</li>
-        </ul>
-      </div>
-    </section>
-
-    <hr class="m-0">
-
-    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="interests">
-      <div class="w-100">
-        <h2 class="mb-5">Interests</h2>
-        <p>Apart from being a web developer, I enjoy readings books and blogs. I enjoy singing and listening to music.</p>
-        <p class="mb-0">When forced indoors, I follow a number of sci-fi and fantasy genre movies and series, I spend a large amount of my free time exploring the latest technology advancements in the web development world.</p>
-      </div>
-    </section>
-
-    <hr class="m-0">
-
-    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="awards">
-      <div class="w-100">
-        <h2 class="mb-5">Awards &amp; Certifications</h2>
-        <ul class="fa-ul mb-0">
-<!--           <li>
-            <i class="fa-li fa fa-trophy text-warning"></i>
-            Entertainer Award</li>
-          --> <li>
-            <i class="fa-li fa fa-trophy text-warning"></i>
-            Honoured for Best Performance - ThinkaHack Hackathon</li>
-          <li>
-            <i class="fa-li fa fa-trophy text-warning"></i>
-            1<sup>st</sup>
-            Place - DR.NGP Engineering College - Hack and Knock v1.0 - Hackathon 2019</li>
-          <li>
-            <i class="fa-li fa fa-trophy text-warning"></i>
-            Completed Machine Learning Crash Course - Google Developers Group</li>
-          <li>
-            <i class="fa-li fa fa-trophy text-warning"></i>
-            Complete Web Developer Bootcamp - Udemy - Andrei Neagoi</li>
-          <li>
-            <i class="fa-li fa fa-trophy text-warning"></i>
-            Cisco Certified Network Associate - CMS Solutions</li>
-        </ul>
-      </div>
-    </section>
-
   </div>
+  <div class="badgescard">
+    <span>
+      <a href="https://in.linkedin.com/in/gokul-raja-t-s-115863134" target="_blank">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+    </span>
+    <span>
 
-  <!-- Bootstrap core JavaScript -->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-  <!-- Plugin JavaScript -->
-  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-
-  <!-- Custom scripts for this template -->
-  <script src="js/resume.min.js"></script>
-
+      <a href="https://github.com/gokulrajats/" target="_blank">
+        <i class="fab fa-github"></i>
+      </a>
+    </span>
+    <span>
+      <a href="https://www.instagram.com/gokulraja3/" target="_blank">
+        <i class="fab fa-instagram"></i>
+      </a>
+    </span>
+</div>
+</div>
 </body>
-
 </html>
